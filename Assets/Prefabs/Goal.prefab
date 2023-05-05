@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1660675273}
   - component: {fileID: 1660675274}
+  - component: {fileID: 3930211865463367659}
   m_Layer: 0
-  m_Name: Cube (12)
+  m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +46,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3930211865463367659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660675272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1b78ec24e02724fbcbc077164b3452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &603698279591258396
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +857,6 @@ GameObject:
   - component: {fileID: 603698281050770667}
   - component: {fileID: 603698281050770660}
   - component: {fileID: 603698281050770661}
-  - component: {fileID: 603698281050770666}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -917,19 +929,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &603698281050770666
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603698281050770664}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &603698281051620212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1037,6 @@ GameObject:
   - component: {fileID: 603698281119477212}
   - component: {fileID: 603698281119477209}
   - component: {fileID: 603698281119477214}
-  - component: {fileID: 603698281119477215}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1111,20 +1109,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &603698281119477215
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603698281119477213}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &603698281237080425
 GameObject:
   m_ObjectHideFlags: 0
