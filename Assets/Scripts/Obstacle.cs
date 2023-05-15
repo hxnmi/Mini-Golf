@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Obstacle : MonoBehaviour {
+public class Obstacle : MonoBehaviour
+{
     [SerializeField] float duration = 1;
     [SerializeField] List<Transform> positions;
 
     int index;
 
-    void Start() {
+    void Start()
+    {
         Move();
     }
 
     // Update is called once per frame
-    void Move() {
+    void Move()
+    {
         var pos = positions[index];
         this.transform.DOMove(pos.position, duration).onComplete = Move;
         index += 1;
