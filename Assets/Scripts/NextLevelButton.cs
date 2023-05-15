@@ -24,4 +24,9 @@ public class NextLevelButton : MonoBehaviour
         int nextLevel = currentLevel + 1;
         SceneManager.LoadScene("Level " + nextLevel);
     }
+
+    public void Main()
+    {
+        SceneManager.LoadScene("Main");
+    }
 }

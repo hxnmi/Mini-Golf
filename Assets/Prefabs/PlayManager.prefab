@@ -49,3 +49,4 @@ MonoBehaviour:
   finishWindow: {fileID: 0}
   finishText: {fileID: 0}
   shootCountText: {fileID: 0}
+  idLevel: 0

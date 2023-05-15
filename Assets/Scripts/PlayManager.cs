@@ -11,10 +11,12 @@ public class PlayManager : MonoBehaviour
     [SerializeField] TMP_Text finishText;
     [SerializeField] TMP_Text shootCountText;
 
+    private const string saveLevel = "SAVELEVEL";
     private bool isBallOutside;
     private bool isBallTeleporting;
     private bool isGoal;
     private Vector3 lastBallPosition;
+    public float idLevel;
 
     private void OnEnable()
     {
@@ -48,8 +50,15 @@ public class PlayManager : MonoBehaviour
 
         isGoal = true;
         ballController.enabled = false;
+        var lastLevel = PlayerPrefs.GetInt(saveLevel);
+        if (lastLevel <= idLevel)
+        {
+            lastLevel += 1;
+            PlayerPrefs.SetInt(saveLevel, lastLevel);
+        }
         finishWindow.gameObject.SetActive(true);
-        finishText.text = "Finished!!\n" + "Shoot Count: " + ballController.ShootCount;
+        finishText.text = "Finish!!\n" + "Level Completed.\n" + "Shoot Count: " + ballController.ShootCount;
+        shootCountText.gameObject.SetActive(false);
     }
 
     public void OnBallOutside()
