@@ -19,6 +19,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
 
     int shootCount;
     public UnityEvent<int> onBallShooted = new UnityEvent<int>();
+    public UnityEvent OnBallHitWall;
 
     public bool ShootingMode { get => shootingMode; }
     public int ShootCount { get => shootCount; }
@@ -103,5 +104,12 @@ public class BallController : MonoBehaviour, IPointerDownHandler
         if (this.IsMove())
             return;
         shootingMode = true;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            OnBallHitWall.Invoke();
+        }
     }
 }

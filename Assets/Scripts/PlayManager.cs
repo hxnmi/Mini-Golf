@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayManager : MonoBehaviour
     [SerializeField] GameObject finishWindow;
     [SerializeField] TMP_Text finishText;
     [SerializeField] TMP_Text shootCountText;
+    [SerializeField] GameObject optionsPanel;
 
     private const string saveLevel = "SAVELEVEL";
     private bool isBallOutside;
@@ -17,6 +19,8 @@ public class PlayManager : MonoBehaviour
     private bool isGoal;
     private Vector3 lastBallPosition;
     public float idLevel;
+    public UnityEvent GoalSound;
+
 
     private void OnEnable()
     {
@@ -51,7 +55,7 @@ public class PlayManager : MonoBehaviour
         isGoal = true;
         ballController.enabled = false;
         var lastLevel = PlayerPrefs.GetInt(saveLevel);
-        if (lastLevel <= idLevel)
+        if (lastLevel == idLevel)
         {
             lastLevel += 1;
             PlayerPrefs.SetInt(saveLevel, lastLevel);
@@ -59,6 +63,8 @@ public class PlayManager : MonoBehaviour
         finishWindow.gameObject.SetActive(true);
         finishText.text = "Finish!!\n" + "Level Completed.\n" + "Shoot Count: " + ballController.ShootCount;
         shootCountText.gameObject.SetActive(false);
+        optionsPanel.gameObject.SetActive(false);
+        GoalSound.Invoke();
     }
 
     public void OnBallOutside()

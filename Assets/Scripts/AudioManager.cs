@@ -9,14 +9,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource bgm;
     [SerializeField] AudioSource sfx;
 
-    public bool IsMute
-    {
-        get => bgm.mute;
-        set => bgm.mute = value;
-    }
-
+    public bool IsMute { get => bgm.mute; set => bgm.mute = value; }
     public float BgmVolume { get => bgm.volume; }
     public float SfxVolume { get => sfx.volume; }
+
     private void Start()
     {
         if (bgmInstance != null)
@@ -51,8 +47,8 @@ public class AudioManager : MonoBehaviour
             LoadBGM();
             LoadSFX();
         }
+        Debug.Log(IsMuted());
     }
-
 
     public void PlaySFX(AudioClip clip)
     {
